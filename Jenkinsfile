@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Git Fork Update ') {
             steps{
+                sh 'git remote add upstream git@github.com:KindKit/KindKit.git'
                 sh 'git fetch upstream'
                 sh 'git checkout master'
                 sh 'git merge upstream/master'
