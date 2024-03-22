@@ -1,11 +1,12 @@
 pipeline {
     agent any
-    environment {}
     stages {
         stage('Git Fork Update ') {
-            sh 'git fetch upstream'
-            sh 'git checkout master'
-            sh 'git merge upstream/master'
+            steps{
+                sh 'git fetch upstream'
+                sh 'git checkout master'
+                sh 'git merge upstream/master'
+            }
         }
     }
     post {
