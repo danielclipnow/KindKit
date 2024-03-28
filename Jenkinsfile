@@ -1,12 +1,17 @@
 pipeline {
     agent any
+    environment {
+        GITHUB_TOKEN = credentials('83759a99-5eb1-4406-8296-e9e4e3bf0594')
+    }
     stages {
         stage('Git Fork Update ') {
             steps{
-                sh 'git remote add upstream git@github.com:KindKit/KindKit.git'
-                sh 'git fetch upstream'
-                sh 'git checkout master'
-                sh 'git merge upstream/master'
+                sh '''
+                    git remote add upstream https://github:${GITHUB_TOKEN}@github.com/KindKit/KindKit.git
+                    git fetch upstream
+                    git checkout master
+                    git merge upstream/master
+                '''
             }
         }
     }
