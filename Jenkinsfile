@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage('Git Fork Update ') {
             steps{
+                def githubUrl = "https://github.com/KindKit/KindKit.git"
+                echo "GitHub URL: ${githubUrl}"
                 sh '''
-                    git remote add upstream https://github:${GITHUB_TOKEN}@github.com/KindKit/KindKit.git
+                    git remote add upstream ${githubUrl}
                     git fetch upstream
                     git checkout master
                     git merge upstream/master
