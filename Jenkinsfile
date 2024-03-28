@@ -4,11 +4,10 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    git credentialsId: '83759a99-5eb1-4406-8296-e9e4e3bf0594', url: 'https://github.com/YourUsername/YourForkedRepo.git'
+                    git credentialsId: '83759a99-5eb1-4406-8296-e9e4e3bf0594', url: 'https://github.com/danielclipnow/KindKit.git'
                 }
             }
         }
-
         stage('Update with Upstream') {
             steps {
                 script {
