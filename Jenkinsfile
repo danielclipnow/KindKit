@@ -14,7 +14,7 @@ pipeline {
                     sh 'git remote add upstream https://github.com/KindKit/KindKit.git'
                     sh 'git fetch upstream'
                     sh 'git merge upstream/master'
-                    sh 'git push origin HEAD'
+                    sh 'git push origin HEAD:master'
                 }
             }
         }
