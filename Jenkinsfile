@@ -13,8 +13,7 @@ pipeline {
                 script {
                     sh 'git remote add upstream https://github.com/KindKit/KindKit.git'
                     sh 'git fetch upstream'
-                    sh 'git checkout main'
-                    sh 'git merge upstream/main'
+                    sh 'git merge upstream/master'
                     sh 'git push origin HEAD'
                 }
             }
