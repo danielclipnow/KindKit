@@ -4,7 +4,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    git credentialsId: '83759a99-5eb1-4406-8296-e9e4e3bf0594', url: 'https://github.com/danielclipnow/KindKit.git'
+                    git credentialsId: '83759a99-5eb1-4406-8296-e9e4e3bf0594', url: 'git@github.com:danielclipnow/KindKit.git'
                 }
             }
         }
