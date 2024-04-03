@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Update with Upstream') {
             steps {
-                withCredentials([gitUsernamePassword(credentialsId: '83759a99-5eb1-4406-8296-e9e4e3bf0594', gitToolName: 'Default')]) {
+                sshagent(['83759a99-5eb1-4406-8296-e9e4e3bf0594']) {
                     sh 'git remote add upstream https://github.com/KindKit/KindKit.git'
                     sh 'git fetch upstream'
                     sh 'git merge upstream/master'
