@@ -19,22 +19,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-             script {
-                if (getContext(hudson.FilePath)) {
-                    deleteDir()
-                }
-            }
-            dir("${env.WORKSPACE}@tmp") {
-                deleteDir()
-            }
-            dir("${env.WORKSPACE}@script") {
-                deleteDir()
-            }
-            dir("${env.WORKSPACE}@script@tmp") {
-                deleteDir()
-            }
-        }
-    }
 }
